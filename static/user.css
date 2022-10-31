@@ -1,0 +1,21 @@
+.row {
+    display:block;
+    flex-wrap:wrap;
+    margin:0 15px 1rem 15px;
+}
+
+.row-length {
+    flex: 0 0 100%;
+    max-width:100%;
+    padding:15 0;
+}
+
+.form-input {
+    appearance:auto;
+    border:none;
+    height:30px;
+    width:487px;
+    box-shadow:0 0 15 0 black;
+    background:#fff;
+    border-radius:5px;
+}

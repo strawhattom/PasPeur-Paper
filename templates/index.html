@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %} Page d'accueil {% endblock %}
+{% block content %}
+<section class="ad">
+    <p>Ne manquez pas cette offre !</p>
+    <a href="#"><img class="img-ad" src="{{ url_for('static', filename='img/ad.jpg') }}" alt=""></a>
+</section>
+
+<section class="popular">
+    <p>Les plus populaires</p>
+    <div class="best-seller">
+        <a class="paper-box paper1 no-grid">
+            <div class="paper-details">
+                <p class="paper-name">Feuille A4 Naturelle, 110g</p>
+                <p class="paper-price">0,86€</p>
+            </div>
+        </a>
+        <a class="paper-box paper2 no-grid">
+            <div class="paper-details">
+                <p class="paper-name">Feuille blanche, A4, 280g</p>
+                <p class="paper-price">0,78€</p>
+            </div>
+        </a>
+        <a class="paper-box paper3 no-grid">
+            <div class="paper-details">
+                <p class="paper-name">Carton blanc, A3</p>
+                <p class="paper-price">0,85€*</p>
+            </div>
+        </a>
+        <a class="paper-box paper4 no-grid">
+            <div class="paper-details">
+                <p class="paper-name">Papier cartonné (couleurs) A4</p>
+                <p class="paper-price">6,99€</p>
+            </div>
+        </a>
+    </div>
+</section>
+
+{% endblock %}
