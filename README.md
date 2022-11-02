@@ -40,7 +40,7 @@ Be sure that you are in your virtual python environment depending of your OS.
 ```bash
 pip -V
 ```
-If it shows your virtual env path, something like `XXX\...\XXX\.venv\...\pip ` you are good, if not do depending of your OS
+If it shows your virtual env path, something like `XXX\...\XXX\.venv\...\pip` you are good, if not do depending of your OS
 ```bash
 .\.venv\Scripts\activate
 #or 
