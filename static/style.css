@@ -1,6 +1,9 @@
+@import url('palette.css');
+
 body {
     margin: 0;
-    background: #EBEBEB;
+    width:80%;
+    background: var(--light-bg);
     font-family: sans-serif;
     font-weight: 700;
 }
@@ -9,7 +12,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    background: #383D3B;
+    background: var(--dark-bg);
     height: 72px;
     display: flex;
     justify-content: space-between;
@@ -25,7 +28,7 @@ header > * {
 }
 
 .recherche {
-    background: #EBEBEB;
+    background: var(--light-bg);
     width: 551px;
     height: 40px;
     border-radius: 20px;
@@ -41,7 +44,7 @@ header > * {
 
 a {
     text-decoration: none;
-    color: #383D3B;
+    color: var(--black);
 }
 
 .compte {
@@ -52,7 +55,7 @@ a {
     margin-right: 2%;
 }
 .compte a {
-    color: #EBEBEB;
+    color: var(--light-bg);
 }
 .compte > * {
     align-self: center;
@@ -140,7 +143,7 @@ main {
 }
 
 .paper-price {
-    color: #ADD981;
+    color: var(--light-green);
     font-weight: 800;
     font-size: 14px;
     line-height: 3px;
