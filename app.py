@@ -30,15 +30,27 @@ def profil():
 
 @app.route("/adresse")
 def adresse():
-    return render_template("contact.html", title = "Adresse de livraison", pages = user_pages)
+    if request.method == 'POST':
+        return redirect('/')
+    else:
+        return render_template("contact.html", title = "Adresse de livraison", pages = user_pages)
 
-@app.route("/information")
+@app.route("/information", methods = ['GET', 'POST'])
 def security():
-    return render_template("contact.html", title = "Connexion et sécurité", pages = user_pages)
+    if request.method == 'POST':
+        return redirect('/')
+    else:
+        return render_template("contact.html", title = "Connexion et sécurité", pages = user_pages)
 
-@app.route("/contact")
+@app.route("/contact", methods = ['GET', 'POST'])
 def contact():
-    return render_template("contact.html", title = "Contact", pages = user_pages)
+    if request.method == 'POST':
+        msg = request.form.get('sujet')
+        return render_template("message.html", title = "Réponse", message = msg)
+    else:
+        return render_template("contact.html", title = "Contact", pages = user_pages)
+
+
 
 if __name__ == '__main__':
     app.run(debug = True)
