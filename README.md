@@ -48,7 +48,7 @@ If it shows your virtual env path, something like `XXX\...\XXX\.venv\...\pip` yo
 ```
 Finally run in dev mode
 ```bash
-flask --app app--debug run
+flask --app app --debug run
 ```
 
 The website is now running in `http://127.0.0.1:5000` !
