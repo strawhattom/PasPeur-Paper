@@ -1,10 +1,14 @@
+/* Palette */
 @import url('palette.css');
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Istok%20Web&display=swap');    /* Istok Web */
+@import url('https://fonts.googleapis.com/css?family=Inter&display=swap');          /* Inter */
 
 body {
     margin: 0;
     width:80%;
     background: var(--light-bg);
-    font-family: sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 700;
 }
 
@@ -44,6 +48,7 @@ header > * {
 
 a {
     text-decoration: none;
+    font-family: 'Istok Web';
     color: var(--black);
 }
 
