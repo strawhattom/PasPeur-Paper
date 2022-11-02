@@ -24,8 +24,7 @@ cd ./PasPeur-Paper
 ```bash
 python -m venv .venv
 .\.venv\Scripts\activate
-
-pip install Flask
+pip install -r requirements.txt
 ```
 
 #### Linux
@@ -33,11 +32,21 @@ pip install Flask
 ```bash
 python -m venv .venv
 . .venv/bin/activate
-pip install Flask
+pip install -r requirements.txt
 ```
 
 ### Run the project
-
+Be sure that you are in your virtual python environment depending of your OS.
+```bash
+pip -V
+```
+If it shows your virtual env path, you are good, if not do
+```bash
+.\.venv\Scripts\activate
+#or 
+. .venv/bin/activate
+```
+Finally run in dev mode
 ```bash
 flask --app app--debug run
 ```
