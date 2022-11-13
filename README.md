@@ -36,13 +36,14 @@ pip install -r requirements.txt
 ```
 
 ### Config db environment
-Create a `credentials.py` in the root of the project
+Create a `env.py` in the root of the project
 ```py
-credentials = {
-    'host': 'localhost',
-    'user': 'root',
-    'password': 'toor',
-    'db': 'paspeurpaper'
+config = {
+    'host':     'localhost',
+    'port':     3306,
+    'user':     'user',             # TO CHANGE
+    'password': 'password',         # TO CHANGE
+    'database': 'paspeur_paper'
 }
 ```
 
