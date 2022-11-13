@@ -1,14 +1,14 @@
 from flask import Flask, render_template, url_for, request, redirect
+from env import config
 from flask_mysqldb import MySQL
-from credentials import credentials
-import hashlib
 
+import hashlib
 app = Flask(__name__)
 
-app.config['MYSQL_HOST'] = credentials['host']
-app.config['MYSQL_USER'] = credentials['user']
-app.config['MYSQL_PASSWORD'] = credentials['password']
-app.config['MYSQL_DB'] = credentials['db']
+app.config['MYSQL_HOST'] = config['host']
+app.config['MYSQL_USER'] = config['user']
+app.config['MYSQL_PASSWORD'] = config['password']
+app.config['MYSQL_DB'] = config['database']
 
 mysql = MySQL(app)
 
@@ -60,21 +60,23 @@ def register():
         param = request.form
         # check existing address if so, retrieve the id, otherwise
 
-
         print(hashlib.sha256((param['email'] + ':' + param['password']).encode()).hexdigest())
 
+        query = "INSERT INTO users (address,firstName,lastName,email,pwd,phone) VALUES ('%s','%s','%s','%s','%s','%s') " % (
+                param['address'],
+                param['firstname'],
+                param['lastname'],
+                param['email'],
+                hashlib.sha256((param['email'] + ':' + param['password']).encode()).hexdigest(),
+                param['phone']
+            )
+        print(query)
+
         cursor = mysql.connection.cursor()
-        cursor.execute(
-            """
-            INSERT INTO users (address,firstName,lastName,email,pwd,phone) VALUES (?,?,?,?,?,?)
-            """,
-            param['address'],
-            param['firstname'],
-            param['lastname'],
-            param['email'],
-            param['password'],
-            hashlib.sha256((param['email'] + ':' + param['password']).encode()).hexdigest()
-        )
+        cursor.execute(query)
+        mysql.connection.commit()
+        cursor.close()
+        return render_template("message.html", title = "Message", message = "Utilisateur crée !")
     else:
         return render_template("register.html", title = "Inscription", pages = user_pages)
 if __name__ == '__main__':
