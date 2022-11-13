@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %} {{title}} {% endblock %}
+{% block script %} <script src="{{ url_for('static', filename='js/register.js')}}"></script>{% endblock %}
+
+{% block css %}<link rel="stylesheet" href="{{ url_for('static', filename='user.css') }}"/>{% endblock %}
+{% block content %}<div class="form-nav">
+                    <form action="POST">
+                        <div class="row">
+                            <div class="row-length">
+                                <label for="address"> Adresse </label>
+                                <input id="address" name="address" class="form-input" type="text" placeholder="Adresse de livraison"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="row-length">
+                                <label for="firstname"> Prenom </label>
+                                <input id="firstname" name="firstname" class="form-input" type="text" placeholder="Votre prénom"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="row-length">
+                                <label for="lastname"> Nom </label>
+                                <input id="lastname" name="lastname" class="form-input" type="text" placeholder="Votre nom"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="row-length">
+                                <label for="email"> E-mail </label>
+                                <input id="email" name="email" class="form-input" type="text" placeholder="example@mail.com"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="row-length">
+                                <label for="password"> Mot de passe </label>
+                                <input id="password" name="password" class="form-input" type="password" placeholder="*******"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="row-length">
+                                <label for="phone"> Téléphone </label>
+                                <input id="phone" name="phone" class="form-input" type="text" placeholder="06..."/>
+                            </div>
+                        </div>
+                        <p id = "register-msg">
+                            {{ message }}
+                        </p>
+                        
+                        <button type="button" onclick="register()">S'inscrire</button>
+                    </form>
+                    
+                </div>{% endblock %}
