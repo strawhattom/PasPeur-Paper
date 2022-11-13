@@ -35,6 +35,17 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
+### Config db environment
+Create a `credentials.py` in the root of the project
+```py
+credentials = {
+    'host': 'localhost',
+    'user': 'root',
+    'password': 'toor',
+    'db': 'paspeurpaper'
+}
+```
+
 ### Run the project
 Be sure that you are in your virtual python environment depending of your OS.
 ```bash
