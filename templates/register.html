@@ -5,7 +5,7 @@
 
 {% block css %}<link rel="stylesheet" href="{{ url_for('static', filename='user.css') }}"/>{% endblock %}
 {% block content %}<div class="form-nav">
-                    <form action="POST">
+                    <form method="POST">
                         <div class="row">
                             <div class="row-length">
                                 <label for="address"> Adresse </label>
@@ -46,7 +46,7 @@
                             {{ message }}
                         </p>
                         
-                        <button type="button" onclick="register()">S'inscrire</button>
+                        <input type="submit" value="S'inscrire"/>
                     </form>
                     
                 </div>{% endblock %}
