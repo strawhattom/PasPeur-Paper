@@ -27,6 +27,14 @@ def home():
 def profil():
     return render_template("profil.html", title = "Profil", pages = user_pages)
 
+@app.route("/panier")
+def basket():
+    return render_template("basket.html", title = "Panier", pages = user_pages)
+
+@app.route("/produits")
+def products():
+    return render_template("products.html", title = "Produits", pages = user_pages)
+
 @app.route("/adresse")
 def adresse():
     if request.method == 'POST':
